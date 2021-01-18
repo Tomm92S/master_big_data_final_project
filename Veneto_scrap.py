@@ -1,29 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Oct 21 00:46:41 2020
-
-@author: -
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 20 19:50:07 2020
-
-@author: -
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Fri Oct 16 09:49:10 2020
 
-@author: Federico
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 15 17:00:19 2020
-
-@author: Federico
+@author: Tommaso Lo Sterzo
 """
 
 
@@ -47,7 +26,7 @@ from datetime import datetime
 start = datetime.now()
 
 #0.1) SET THE INITIAL URL
-URL = 'https://www.immobiliare.it/mercato-immobiliare/abruzzo/'
+URL = 'https://www.immobiliare.it/mercato-immobiliare/veneto/'
 
 
 #0.2) SET THE WEBDRIVER
@@ -67,7 +46,7 @@ driver.get(URL)
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 #1.1) OPEN FILE TO WRITE (AFFITTI REGION) 
-with open('Raw_data\\Abruzzo_affitti.csv', 'a',encoding="utf-8") as iterator1:
+with open('Raw_data\\Veneto_affitti.csv', 'w',encoding="utf-8") as iterator1:
     writer_reg_a = csv.writer(iterator1, delimiter=',', quotechar='"' )
     
     row_reg_a = [URL]    
@@ -155,7 +134,7 @@ with open('Raw_data\\Abruzzo_affitti.csv', 'a',encoding="utf-8") as iterator1:
     
     
     #1.2) OPEN FILE TO WRITE (VENDITE REGION) 
-    with open('Raw_data\\Abruzzo_vendite.csv', 'a',encoding="utf-8") as iterator2:
+    with open('Raw_data\\Veneto_vendite.csv', 'w',encoding="utf-8") as iterator2:
         writer_reg_v = csv.writer(iterator2, delimiter=',', quotechar='"' )
         
         row_reg_v = [URL]
@@ -252,17 +231,17 @@ for provincia in province:
 print('ho preso url delle province...')
 
 #0.3)OPEN FILES TO WRITE
-with open('Raw_data\\Abruzzo_province_affitti.csv', 'a',encoding="utf-8") as iterator3:
+with open('Raw_data\\Veneto_province_affitti.csv', 'w',encoding="utf-8") as iterator3:
     writer_prov_a = csv.writer(iterator3, delimiter=',', quotechar='"' )
-    with open('Raw_data\\Abruzzo_province_vendite.csv', 'a',encoding="utf-8") as iterator4:
+    with open('Raw_data\\Veneto_province_vendite.csv', 'w',encoding="utf-8") as iterator4:
         writer_prov_v = csv.writer(iterator4, delimiter=',', quotechar='"' )
-        with open('Raw_data\\Abruzzo_comuni_affitti.csv', 'a',encoding="utf-8") as iterator5:
+        with open('Raw_data\\Veneto_comuni_affitti.csv', 'w',encoding="utf-8") as iterator5:
             writer_com_a = csv.writer(iterator5, delimiter=',', quotechar='"' )
-            with open('Raw_data\\Abruzzo_comuni_vendite.csv', 'a',encoding="utf-8") as iterator6:
+            with open('Raw_data\\Veneto_comuni_vendite.csv', 'w',encoding="utf-8") as iterator6:
                 writer_com_v = csv.writer(iterator6, delimiter=',', quotechar='"' )
-                with open('Raw_data\\Abruzzo_zone_affitti.csv', 'a',encoding="utf-8") as iterator7:
+                with open('Raw_data\\Veneto_zone_affitti.csv', 'w',encoding="utf-8") as iterator7:
                     writer_zone_a = csv.writer(iterator7, delimiter=',', quotechar='"' )
-                    with open('Raw_data\\Abruzzo_zone_vendite.csv', 'a',encoding="utf-8") as iterator8:
+                    with open('Raw_data\\Veneto_zone_vendite.csv', 'w',encoding="utf-8") as iterator8:
                         writer_zone_v = csv.writer(iterator8, delimiter=',', quotechar='"' )  
                         
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -512,8 +491,7 @@ with open('Raw_data\\Abruzzo_province_affitti.csv', 'a',encoding="utf-8") as ite
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #3) SEZIONE COMUNI                            
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                            if URL == URL_province[0]:
-                                URL_comuni = URL_comuni[83:]
+                            
                             #FOR ALL COMUNI:
                             count_c = 0
 
